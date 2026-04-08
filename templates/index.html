@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+
 <h3>Xin chào {{user}}</h3>
 
-<a href="/upload">Upload tài liệu</a>
-
-<ul>
+<div class="row">
 {% for file in files %}
-    <li>
-        {{file.filename}} - 
-        <a href="/uploads/{{file.filename}}">Download</a>
-    </li>
+  <div class="col-md-4">
+    <div class="card p-3 mb-3">
+      <h5>{{file.filename}}</h5>
+      <a class="btn btn-success" href="/uploads/{{file.filename}}">Download</a>
+    </div>
+  </div>
 {% endfor %}
-</ul>
+</div>
 
 {% endblock %}
