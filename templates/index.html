@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Xin chào {{user}}</h3>
+
+<a href="/upload">Upload tài liệu</a>
+
+<ul>
+{% for file in files %}
+    <li>
+        {{file.filename}} - 
+        <a href="/uploads/{{file.filename}}">Download</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
